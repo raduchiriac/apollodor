@@ -25,15 +25,15 @@ class ShopPageComponent extends React.Component {
     this._goBack = this._goBack.bind(this)
   }
 
-  render () {    
+  render () {
     const { loading, error, Pokemon } = this.props.data;
-    
+
     assert.strictEqual(error, undefined);
 
     if (loading) {
       return (<Loading />);
     }
-    
+
     return (
       <div>
         <ShopCardHeader shop={ filter(ShopCardHeader.fragments.shop, Pokemon) } />

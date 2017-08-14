@@ -10,7 +10,7 @@ export class ShopPreview extends React.Component {
         style={{ minWidth: 200 }}
         className='link dim grow mw4 bg-white ma2 pa3 shadow-1'
       >
-        {/* <img src={this.props.shop.url} alt={this.props.shop.name} /> */}
+        <img src={this.props.shop.url} alt={this.props.shop.name} />
         <div className='gray tc'>{this.props.shop.name}</div>
       </Link>
     )

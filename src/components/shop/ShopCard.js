@@ -48,7 +48,7 @@ class ShopCardComponent extends React.Component {
     super(props)
 
     const { name, url } = props.shop;
-    
+
     this.state = { name, url }
     this._handleUpdate = this._handleUpdate.bind(this)
     this._handleDelete = this._handleDelete.bind(this)
@@ -70,11 +70,11 @@ class ShopCardComponent extends React.Component {
             placeholder="Image Url"
             onChange={ (e) => this.setState({ url: e.target.value }) }
           />
-          {/* <ImageContainer>
+          <ImageContainer>
             { this.state.url &&
               <img src={ this.state.url } alt={ this.state.name } className="w-100 mv3 pa4" />
             }
-          </ImageContainer> */}
+          </ImageContainer>
           <div className='flex justify-between'>
             <Button delete onClick={ this._handleDelete }>Delete</Button>
             <Button onClick={ this.props.handleBack }>Back</Button>

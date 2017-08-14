@@ -41,9 +41,6 @@ class ShopComponent extends React.Component {
   }
 
   render () {
-
-    console.log(process.env);
-    
     const { loading, error, Trainer } = this.props.data;
 
     assert.strictEqual(error, undefined);

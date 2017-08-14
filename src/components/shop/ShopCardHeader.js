@@ -23,7 +23,7 @@ export class ShopCardHeader extends React.Component {
       }
     `
   }
- 
+
   render () {
     const { name, trainer } = this.props.shop
     return (
