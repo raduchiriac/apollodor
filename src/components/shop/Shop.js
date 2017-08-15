@@ -50,7 +50,6 @@ class ShopComponent extends React.Component {
     }
 
     const shops = Trainer.ownedPokemons
-    const total = Trainer._ownedPokemonsMeta.count
     return (
       <div className='w-100 bg-light-gray min-vh-100'>
         <Title className='tc pa5'>

@@ -82,6 +82,7 @@ class ShopCardComponent extends React.Component {
               ? <Button save onClick={ this._handleUpdate }>Update</Button>
               : <Button disabled>Update</Button>
             }
+            <Button>Buy</Button>
           </div>
         </Card>
       </div>

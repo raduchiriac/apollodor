@@ -7,6 +7,8 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws'
 
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+
 import { Shop, ShopPage, AddShopCard } from './components/shop'
 import { MapView } from './components/maps'
 
@@ -36,8 +38,20 @@ const client = new ApolloClient({
   dataIdFromObject: o => o.id
 });
 
+const store = createStore(
+  combineReducers({
+    apollo: client.reducer(),
+  }),
+  {}, // initial state
+  compose(
+      applyMiddleware(client.middleware()),
+      // If you are using the devToolsExtension, you can add it here also
+      (typeof window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined') ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f,
+  )
+);
+
 ReactDOM.render((
-    <ApolloProvider client={client}>
+    <ApolloProvider store={store} client={client}>
       <BrowserRouter>
         <Switch>
           <Route exact path='/shop' component={Shop} />

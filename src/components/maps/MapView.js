@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactMapboxGl, { Layer, Feature, Marker } from "react-mapbox-gl";
+import ReactMapboxGl, { Marker } from "react-mapbox-gl";
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN
 
